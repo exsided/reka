@@ -1,0 +1,55 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: $white-bg-color;
+    padding: vw(128 48 48, $desktop);
+    overflow: auto;
+
+    &__logo {
+        width: 100%;
+        flex-shrink: 0;
+    }
+
+    &__description {
+        font-size: vw(16, $desktop);
+        line-height: vw(24, $desktop);
+        color: $almost-black-color;
+        margin-top: vw(64, $desktop);
+    }
+
+    &__main-email {
+        font-size: vw(14, $desktop);
+        line-height: vw(20, $desktop);
+        margin-top: vw(64, $desktop);
+        color: $almost-black-color;
+        text-decoration: unset;
+        width: fit-content;
+    }
+
+    &__information {
+        margin-top: auto;
+    }
+
+    &__fun-progress {
+        margin-top: vw(16, $desktop);
+    }
+}
+
+.sidebar-information {
+    &__text {
+        display: block;
+        font-size: vw(12, $desktop);
+        line-height: vw(18, $desktop);
+        color: $dark-gray-color;
+        width: fit-content;
+
+        &_is-link {
+            text-decoration: underline;
+        }
+
+        &:not(:first-child) {
+            margin-top: vw(24, $desktop);
+        }
+    }
+}
+

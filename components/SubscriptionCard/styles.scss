@@ -1,0 +1,112 @@
+.subscription-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: $white-bg-color;
+    border-radius: vw(8, $desktop);
+    border: 1px solid $light-gray-color;
+    padding: vw(24, $desktop);
+    overflow: hidden;
+
+    @include mq($tablet) {
+        border-radius: vw(8, $tablet);
+        padding: vw(16, $tablet);
+    }
+
+    @include mq($mobile) {
+        border-radius: vw(8, $mobile);
+        padding: vw(16, $mobile);
+    }
+
+    &__picture {
+        width: 100%;
+        height: vw(188, $desktop);
+
+        @include mq($tablet) {
+            height: vw(168, $tablet);
+        }
+
+        @include mq($mobile) {
+            height: vw(168, $mobile);
+        }
+    }
+
+    &__description {
+        display: -webkit-box;
+        font-size: vw(16, $desktop);
+        line-height: vw(24, $desktop);
+        margin-top: vw(16, $desktop);
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        min-height: vw(47, $desktop);
+        color: $almost-black-color;
+
+        @include mq($tablet) {
+            font-size: vw(16, $tablet);
+            line-height: vw(24, $tablet);
+            margin-top: vw(16, $tablet);
+            min-height: vw(47, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(16, $mobile);
+            line-height: vw(24, $mobile);
+            margin-top: vw(16, $mobile);
+            min-height: vw(47, $mobile);
+        }
+    }
+
+    &__button {
+        margin-top: vw(16, $desktop);
+
+        @include mq($tablet) {
+            margin-top: vw(16, $tablet);
+        }
+
+        @include mq($mobile) {
+            margin-top: vw(16, $mobile);
+        }
+    }
+
+    &__button-icon {
+        margin-right: vw(8, $desktop);
+        @include box(vw(24, $desktop));
+
+        @include mq($tablet) {
+            margin-right: vw(8, $tablet);
+            @include box(vw(24, $tablet));
+        }
+        @include mq($mobile) {
+            margin-right: vw(8, $mobile);
+            @include box(vw(24, $mobile));
+        }
+    }
+
+    &__loader-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(3px);
+        background-color: $overlay-bg-color;
+        cursor: progress;
+    }
+
+    &__loader {
+        z-index: 10;
+        @include box(vw(40, $desktop));
+
+        @include mq($tablet) {
+            @include box(vw(40, $tablet));
+        }
+
+        @include mq($mobile) {
+            @include box(vw(40, $mobile));
+        }
+    }
+}

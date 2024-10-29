@@ -1,0 +1,36 @@
+.footer {
+    padding-top: vw(20, $tablet);
+    padding-bottom: vw(40, $tablet);
+    box-shadow: 0 5px 10px $gray-color;
+    background-color: $white-bg-color;
+
+    @include mq($mobile) {
+        padding-top: vw(20, $mobile);
+        padding-bottom: vw(40, $mobile);
+    }
+
+    &__text {
+        display: block;
+        font-size: vw(12, $tablet);
+        line-height: vw(18, $tablet);
+        color: $dark-gray-color;
+        width: fit-content;
+
+        @include mq($mobile) {
+            font-size: vw(12, $mobile);
+            line-height: vw(18, $mobile);
+        }
+
+        &_is-link {
+            text-decoration: underline;
+        }
+
+        &:not(:first-child) {
+            margin-top: vw(12, $tablet);
+
+            @include mq($mobile) {
+                margin-top: vw(12, $mobile);
+            }
+        }
+    }
+}

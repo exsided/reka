@@ -1,0 +1,161 @@
+.popup {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    background-color: $overlay-bg-color;
+    backdrop-filter: blur(3px);
+
+    @include mq($tablet) {
+        padding: vw(32, $tablet);
+    }
+
+    @include mq($mobile) {
+        padding: vw(32, $mobile);
+    }
+
+    &__content {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        max-height: 100%;
+        max-width: vw(800, $desktop);
+        width: fit-content;
+        overflow-y: auto;
+        transition: transform .2s ease;
+        border-radius: vw(10, $desktop);
+        background-color: $white-bg-color;
+
+        @include mq($tablet) {
+            max-width: unset;
+            border-radius: vw(10, $tablet);
+        }
+
+        @include mq($mobile) {
+            border-radius: vw(10, $mobile);
+            width: 100%;
+        }
+    }
+
+    &__content-inner {
+        padding: vw(20 24, $desktop);
+
+        @include mq($tablet) {
+            padding: vw(40 20 40, $tablet);
+        }
+
+        @include mq($mobile) {
+            padding: vw(40 20 40, $mobile);
+        }
+    }
+
+    &__content-wr {
+        position: relative;
+        display: flex;
+        height: fit-content;
+        width: 100%;
+        min-width: vw(420, $desktop);
+        min-height: vw(100, $desktop);
+
+        @include mq($tablet) {
+            min-height: unset;
+        }
+    }
+
+    &__close {
+        position: sticky;
+        top: vw(20, $desktop);
+        height: 0;
+        z-index: 1;
+        width: calc(100% - vw(30, $desktop));
+
+        @include mq($tablet) {
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    &__close-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include box(vw(36, $desktop));
+        cursor: pointer;
+        margin-left: auto;
+        transform: translate(vw(20, $desktop), vw(-10, $desktop));
+        transition: .2s ease;
+        outline: 2px solid transparent;
+        border: unset;
+        border-radius: 4px;
+
+        svg {
+            @include box(vw(12, $desktop));
+
+            @include mq($tablet) {
+                @include box(vw(12, $tablet));
+            }
+
+            @include mq($mobile) {
+                @include box(vw(12, $mobile));
+            }
+        }
+
+        @media (hover: hover) {
+            path {
+                transition: .2s ease;
+            }
+
+            &:hover {
+                svg {
+                    transform: rotate(90deg);
+                    transition: .2s ease;
+                }
+            }
+        }
+
+        @include mq($tablet) {
+            transform: unset;
+            @include box(vw(40, $tablet));
+            border-radius: vw(30, $tablet);
+        }
+
+        @include mq($mobile) {
+            transform: unset;
+            @include box(vw(40, $mobile));
+            border-radius: vw(30, $mobile);
+        }
+    }
+
+    &__preloader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        @include box(vw(30, $desktop));
+
+        @include mq($tablet) {
+            @include box(vw(30, $tablet));
+        }
+        @include mq($mobile) {
+            @include box(vw(30, $mobile));
+        }
+    }
+}
+
+.popup-enter-active, .popup-leave-active {
+    transition: opacity .5s;
+}
+
+.popup-enter-from, .popup-leave-to {
+    opacity: 0;
+
+    .popup__content {
+        transform: scale(0);
+    }
+}

@@ -1,0 +1,41 @@
+html {
+    font-family: 'Rubik';
+}
+
+h1 {
+    margin: 0;
+    font-size: vw(24, $desktop);
+    font-weight: 400;
+    line-height: vw(30, $desktop);
+    color: $black-color;
+
+    @include mq($tablet) {
+        font-size: vw(24, $tablet);
+        line-height: vw(30, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(24, $mobile);
+        line-height: vw(30, $mobile);
+    }
+}
+
+p {
+    font-size: vw(20, $desktop);
+    line-height: vw(24, $desktop);
+    margin: 0;
+
+    @include mq($tablet) {
+        font-size: vw(16, $tablet);
+        line-height: vw(20, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(16, $mobile);
+        line-height: vw(20, $mobile);
+    }
+}
+
+*::selection {
+    background: $main-color;
+}

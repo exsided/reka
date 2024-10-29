@@ -1,0 +1,154 @@
+.ui-button {
+    $base: '.ui-button';
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    transition: .2s ease;
+    border-radius: vw(10, $desktop);
+    border: unset;
+    outline: unset;
+    font-size: vw(16, $desktop);
+
+    @include mq($tablet) {
+        font-size: vw(16, $tablet);
+        border-radius: vw(10, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(16, $mobile);
+        border-radius: vw(10, $mobile);
+    }
+
+    &_color {
+        &_gray {
+            background-color: $gray-bg-color;
+            color: $main-color;
+            border: 1px solid $gray-color;
+            outline: 1px solid transparent;
+
+            @include hover {
+                border-color: $main-color;
+            }
+
+            &:focus {
+                border-color: $main-color;
+                outline-color: $main-color;
+            }
+
+            &:active {
+                transform: scale(.95);
+            }
+        }
+
+        &_primary {
+            background-color: $main-bg-color;
+            color: $white-color;
+
+            &:active {
+                transform: scale(.95);
+            }
+        }
+
+        &_light {
+            background-color: $light-bg-color;
+            color: $main-color;
+            outline: 1px solid transparent;
+
+            @include hover {
+                outline-color: $main-color;
+            }
+
+            &:focus {
+                outline-color: $main-color;
+            }
+
+            &:active {
+                transform: scale(.95);
+            }
+        }
+    }
+
+    &_size {
+        &_small {
+            padding: 0 vw(12, $desktop);
+            height: vw(32, $desktop);
+
+            @include mq($tablet) {
+                padding: 0 vw(12, $tablet);
+                height: vw(32, $tablet);
+            }
+
+            @include mq($mobile) {
+                padding: 0 vw(12, $mobile);
+                height: vw(32, $mobile);
+            }
+        }
+
+        &_medium {
+            padding: 0 vw(16, $desktop);
+            height: vw(36, $desktop);
+
+            @include mq($tablet) {
+                padding: 0 vw(16, $tablet);
+                height: vw(36, $tablet);
+            }
+
+            @include mq($mobile) {
+                padding: 0 vw(16, $mobile);
+                height: vw(36, $mobile);
+            }
+        }
+    }
+
+    &_with-icon#{$base}_size_small {
+        padding-left: vw(4, $desktop);
+
+        @include mq($tablet) {
+            padding-left: vw(4, $tablet);
+        }
+
+        @include mq($mobile) {
+            padding-left: vw(4, $mobile);
+        }
+    }
+
+    &_with-icon#{$base}_size_medium {
+        padding-left: vw(10, $desktop);
+
+        @include mq($tablet) {
+            padding-left: vw(10, $tablet);
+        }
+
+        @include mq($mobile) {
+            padding-left: vw(10, $mobile);
+        }
+    }
+
+    &_rounded {
+        border-radius: vw(16, $desktop);
+
+        @include mq($tablet) {
+            border-radius: vw(16, $tablet);
+        }
+
+        @include mq($mobile) {
+            border-radius: vw(16, $mobile);
+        }
+    }
+
+    &__icon {
+        width: vw(24, $desktop);
+        margin-right: vw(8, $desktop);
+
+        @include mq($tablet) {
+            margin-right: vw(8, $tablet);
+        }
+
+        @include mq($mobile) {
+            margin-right: vw(8, $mobile);
+        }
+    }
+
+}

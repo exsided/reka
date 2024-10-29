@@ -1,0 +1,63 @@
+.progress-bar {
+    display: flex;
+    align-items: center;
+
+    &__placeholder {
+        position: relative;
+        border-radius: vw(8, $desktop);
+        width: 100%;
+        height: vw(16, $desktop);
+        overflow: hidden;
+
+        @include mq($tablet) {
+            border-radius: vw(8, $tablet);
+            height: vw(16, $tablet);
+        }
+
+        @include mq($mobile) {
+            border-radius: vw(8, $mobile);
+            height: vw(16, $mobile);
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            height: 97%;
+            width: 100%;
+            background-color: $almost-black-color;
+        }
+    }
+
+    &__fill {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        height: 100%;
+        transform: translateY(-50%);
+        background-color: $secondary-color;
+        transition: 1s ease;
+    }
+
+    &__percent-text {
+        margin-left: vw(16, $desktop);
+        font-size: vw(16, $desktop);
+        line-height: vw(16, $desktop);
+        color: $secondary-color;
+        min-width: 4ch;
+        text-align: right;
+
+        @include mq($tablet) {
+            margin-left: vw(16, $tablet);
+            font-size: vw(16, $tablet);
+            line-height: vw(16, $tablet);
+        }
+        @include mq($mobile) {
+            margin-left: vw(16, $mobile);
+            font-size: vw(16, $mobile);
+            line-height: vw(16, $mobile);
+        }
+    }
+}

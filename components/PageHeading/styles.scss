@@ -1,0 +1,29 @@
+.page-heading {
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include mq($mobile) {
+            flex-direction: column;
+        }
+    }
+
+    &__actions {
+        flex-shrink: 0;
+
+        @include mq($mobile) {
+            margin-top: vw(16, $mobile);
+        }
+    }
+
+    &__description {
+        margin-top: vw(18, $desktop);
+
+        @include mq($tablet) {
+            margin-top: vw(18, $tablet);
+        }
+        @include mq($mobile) {
+            margin-top: vw(18, $mobile);
+        }
+    }
+}

@@ -1,0 +1,33 @@
+html {
+    background-color: $gray-bg-color;
+    color: $dark-gray-color;
+    font-size: vw(16, $desktop);
+
+    @include mq($tablet) {
+        font-size: vw(16, $tablet);
+    }
+
+    @include mq($mobile) {
+        font-size: vw(16, $mobile);
+    }
+}
+
+.container {
+    padding-left: vw(60, $desktop);
+    padding-right: vw(60, $desktop);
+    width: 100%;
+
+    @include mq($tablet) {
+        padding-left: vw(40, $tablet);
+        padding-right: vw(40, $tablet);
+    }
+
+    @include mq($mobile) {
+        padding-left: vw(20, $mobile);
+        padding-right: vw(20, $mobile);
+    }
+}
+
+.disable-scroll {
+    overflow: hidden;
+}

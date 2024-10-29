@@ -1,0 +1,41 @@
+.happiness-percentage {
+    &__text {
+        font-size: vw(12, $desktop);
+        line-height: vw(12, $desktop);
+        text-transform: uppercase;
+        color: $dark-gray-color;
+
+        @include mq($tablet) {
+            font-size: vw(12, $tablet);
+            line-height: vw(12, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(12, $mobile);
+            line-height: vw(12, $mobile);
+        }
+    }
+
+    &__description {
+        font-size: vw(14, $desktop);
+        line-height: vw(20, $desktop);
+        margin-top: vw(16, $desktop);
+        color: $dark-gray-color;
+
+        b {
+            color: $main-color;
+        }
+
+        @include mq($tablet) {
+            font-size: vw(14, $tablet);
+            line-height: vw(20, $tablet);
+            margin-top: vw(16, $tablet);
+        }
+
+        @include mq($mobile) {
+            font-size: vw(14, $mobile);
+            line-height: vw(20, $mobile);
+            margin-top: vw(16, $mobile);
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.index-page {
+    &__subscriptions-grid {
+        margin-top: vw(24, $desktop);
+
+        @include mq($tablet) {
+            margin-top: vw(40, $tablet);
+        }
+
+        @include mq($mobile) {
+            margin-top: vw(40, $mobile);
+        }
+    }
+
+    &__happiness-percentage {
+        display: none;
+
+        @include mq($tablet) {
+            position: sticky;
+            display: block;
+            top: 0;
+            z-index: 50;
+            margin-top: vw(40, $tablet);
+            backdrop-filter: blur(10px);
+            background-color: rgba($gray-bg-color, .7);
+            padding-top: vw(10, $tablet);
+            padding-bottom: vw(10, $tablet);
+        }
+
+        @include mq($mobile) {
+            margin-top: vw(40, $mobile);
+            padding-top: vw(10, $mobile);
+            padding-bottom: vw(10, $mobile);
+        }
+    }
+}

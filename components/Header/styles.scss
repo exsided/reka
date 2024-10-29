@@ -1,0 +1,19 @@
+.header {
+    padding: vw(20, $tablet);
+    box-shadow: 0 -5px 10px $gray-color;
+    background-color: $white-bg-color;
+
+    @include mq($mobile) {
+        padding: vw(20, $mobile);
+    }
+
+    &__logo {
+        display: block;
+        margin: auto;
+        height: vw(40, $tablet);
+
+        @include mq($mobile) {
+            height: vw(40, $mobile);
+        }
+    }
+}

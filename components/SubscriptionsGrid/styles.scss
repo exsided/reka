@@ -1,0 +1,20 @@
+.subscriptions-grid {
+    position: relative;
+    min-height: vw(327, $desktop);
+
+    &__cards-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: vw(24, $desktop);
+
+        @include mq($tablet) {
+            grid-template-columns: repeat(3, 1fr);
+            gap: vw(12, $tablet);
+        }
+
+        @include mq($mobile) {
+            grid-template-columns: 1fr;
+            gap: vw(12, $mobile);
+        }
+    }
+}

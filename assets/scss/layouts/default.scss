@@ -1,0 +1,48 @@
+.default-layout {
+    display: flex;
+    padding-top: vw(60, $desktop);
+    padding-bottom: vw(60, $desktop);
+    min-height: 100vh;
+
+    @include mq($tablet) {
+        flex-direction: column;
+        padding: unset;
+    }
+
+    &__content {
+        padding-left: vw($side-bar-width, $desktop);
+        flex: 1;
+
+        @include mq($tablet) {
+            padding-left: unset;
+            padding-bottom: vw(80, $tablet);
+        }
+    }
+
+    &__sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        min-height: 100vh;
+        width: vw($side-bar-width, $desktop);
+
+        @include mq($tablet) {
+            display: none;
+        }
+    }
+
+    &__header {
+        @include mq($tablet) {
+            margin-bottom: vw(40, $tablet);
+        }
+    }
+
+    &__footer, &__header {
+        display: none;
+
+        @include mq($tablet) {
+            display: block;
+        }
+    }
+}
